@@ -1,0 +1,213 @@
+body {
+  background-color: #242424;
+   background-image: url('../images/3D.png');
+   background-repeat: repeat;
+  font: 400 1.875em/0.8 Ubuntu;
+  color: rgb(128, 128, 128);
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 720px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.container .container {
+  left: 0;
+  right: 0;
+  z-index: 16;
+  width: 970px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+._button {
+  display: block;
+  float: left;
+  width: 103.6231884057%;
+  height: 33px;
+  border-radius: 14px;
+  background-color: rgba(0,0,0,0);
+  font-size: 0.533em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+._container {
+  left: 0;
+  z-index: 17;
+  width: 100%;
+  background-image: url('../images/FPC_1.png');
+  background-repeat: no-repeat;
+  background-size: 970px 670px;
+  background-position: center center;
+}
+
+._input {
+  display: block;
+  float: left;
+  width: 86.8421052631%;
+  height: 31px;
+  margin-left: 6.5789473684%;
+  padding: 0 10px;
+  font-size: 0.767em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(77, 77, 77);
+  background-color: rgba(0,0,0,0);
+}
+
+.element-1 {
+  position: relative;
+  float: left;
+  width: 27.9381443298%;
+  height: 80px;
+  margin: 270px 0 0 52px;
+  border-radius: 16px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
+}
+
+.element-2 {
+  position: relative;
+  float: left;
+  width: 27.9381443298%;
+  height: 80px;
+  margin: 270px 0 0 26px;
+  border-radius: 16px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
+}
+
+.element-3 {
+  position: relative;
+  float: left;
+  width: 27.9381443298%;
+  height: 80px;
+  margin: 270px 0 0 23px;
+  border-radius: 16px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
+}
+
+.element-4 {
+  position: absolute;
+  top: 482px;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  width: 85.1546391752%;
+  height: 33px;
+  margin: 0 auto;
+}
+
+.element-5 {
+  position: absolute;
+  top: 435px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  width: 85.1546391752%;
+  height: 33px;
+  margin: 0 auto;
+}
+
+.element-6 {
+  float: left;
+  clear: both;
+  width: 14.2268041237%;
+  height: 33px;
+  margin: 212px 0 0 252px;
+  border-radius: 44px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
+}
+
+.element-7 {
+  position: absolute;
+  top: 562px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 15.6701030927%;
+  height: 33px;
+  margin: 0 auto;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
+  text-shadow: 0 1px 0 rgb(255, 255, 255);
+}
+
+.element-8 {
+  float: left;
+  width: 14.2268041237%;
+  height: 33px;
+  margin: 210px 0 0 185px;
+  border-radius: 44px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
+}
+
+.text-1 {
+  width: 271px;
+  height: 78px;
+  text-shadow: 0 1px 0 rgb(255, 255, 255);
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+}
+
+.text-2 {
+  z-index: 4;
+  width: 271px;
+  height: 78px;
+  text-shadow: 0 1px 0 rgb(255, 255, 255);
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+}
+
+.text-3 {
+  z-index: 6;
+  width: 271px;
+  height: 78px;
+  text-shadow: 0 1px 0 rgb(255, 255, 255);
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+}
+
+.text-4 {
+  z-index: 10;
+  text-shadow: 0 1px 1px rgb(255, 255, 255);
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: rgb(128, 128, 128);
+}
+
+.text-5 {
+  z-index: 8;
+  text-shadow: 0 1px 1px rgb(255, 255, 255);
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: rgb(128, 128, 128);
+}
+
+.element ._button-1 {
+  margin-top: -2px;
+}
