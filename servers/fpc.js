@@ -36,6 +36,7 @@ var DPAR = 'P9_41';
 var ERROR = 'P9_42';
 
 var f_parity = 0;
+var state = 0;
 
 this.initPins = function () {
 
@@ -77,7 +78,7 @@ this.initPins = function () {
 
 //set pins default state
 //led mode state
-    bone.digitalWrite('USR0', bone.LOW);
+    bone.digitalWrite('USR0', state);
 
 //address mode state
     bone.digitalWrite(A0, bone.LOW);
@@ -115,6 +116,7 @@ this.addressWrite = function(address, parity) {
 
 this.fiboWrite = function(address, mask) {
 var adr = address;
+var f_parity_mask;
 f_parity = 0;
     adr = this.a_pinWrite(adr, A12, 377, mask&0x1000);
     adr = this.a_pinWrite(adr, A11, 233, mask&0x0800);
@@ -129,7 +131,9 @@ f_parity = 0;
     adr = this.a_pinWrite(adr, A2, 3, mask&0x0004);
     adr = this.a_pinWrite(adr, A1, 2, mask&0x0002);
     adr = this.a_pinWrite(adr, A0, 1, mask&0x0001);
-    bone.digitalWrite(APAR, (f_parity)?bone.HIGH:bone.LOW);
+    f_parity_mask = (mask&0x2000)?(f_parity^1):f_parity; 
+    bone.digitalWrite(APAR, (f_parity_mask)?bone.HIGH:bone.LOW);
+    return f_parity;
 }
 
 this.a_pinWrite = function(a, a_pin, pin_value, inv) {
@@ -165,4 +169,13 @@ if(a&0x0004)p^=1;
 if(a&0x0002)p^=1;
 if(a&0x0001)p^=1;
 return p;
+}
+
+this.toggleUSR0 = function() {
+    state = state^1;
+    bone.digitalWrite(state);
+}
+
+this.getErrorState = function() {
+    return bone.digitalRead(ERROR);
 }

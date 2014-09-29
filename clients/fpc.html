@@ -3,13 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
-  <title>TETS</title>
-  <link href="http://fonts.googleapis.com/css?family=Ubuntu:400,400,700" rel="stylesheet" type="text/css">
+  <title>ERROR DETECTION TETS</title>
+  <link href="http://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/standardize.css">
   <link rel="stylesheet" href="css/index-grid.css">
   <link rel="stylesheet" href="css/index.css">
-  <script src="loader_io.js"></script>
-  <-script src="http://192.168.7.2:8080/socket.io/socket.io.js"></script>
   <script src="socket.io.js"></script>
   <script src="fpc_client.js"></script>
 </head>
@@ -17,30 +15,46 @@
   <div class="container _container">
     <div class="container clearfix">
       <div class="element element-1 js--t-i-m-e">
-        <p id="b_pr" class="text text-2" >00.00</p>
+       <p id="b_pr" class="text text-2" >00.00</p>
       </div>
       <div class="element element-2 js--t-i-m-e">
-        <p id="f_pr" class="text text-2" >00.00</p>
+         <p id="f_pr" class="text text-2" >00.00</p>
       </div>
       <div class="element element-3 js--t-i-m-e">
         <p id="bp_pr" class="text text-2" >00.00</p>
       </div>
-      <div class="element element-4 js--t-i-m-e">
-        <p id="code_out" class="text text-5 js-id="b_pr"" >0000000000000</p>
-        
+      <div class="element element-4 clearfix js--t-i-m-e">
+        <p id="total_err_count" class="text _text">0</p>
       </div>
-      <div class="element element-5 js--t-i-m-e">
-        <p id="code_in" class="text text-5 js-id="b_pr"" >0000000000000</p>
+      <div class="element element-5 clearfix js--t-i-m-e">
+        <p id="bp_err_count" class="text _text">0</p>
       </div>
       <div class="element element-6 clearfix js--t-i-m-e">
-        <input type="button" id="start_stop" value="START" class="_button _button-1" >
+        <p id="f_err_count" class="text _text">0</p>
       </div>
-      <div class="element element-7 js--t-i-m-e">
-        <input class="_input" placeholder="2000" value="200" id="polling" type="text">
-        
+      <div class="element element-7 clearfix js--t-i-m-e">
+        <p class="text _text">0</p>
       </div>
       <div class="element element-8 clearfix js--t-i-m-e">
-       <input type="button" id="pause_resume" value="PAUSE" class="_button" >
+        <input type="button" id="start_stop" value="START" class="_button _button-1" >
+      </div>
+      <div class="element element-9 clearfix js--t-i-m-e">
+        <input type="button" id="pause_resume" value="PAUSE" class="_button _button-2" >
+      </div>
+      <div class="element element-10 js--t-i-m-e">
+       <p id="code_in" class="text text-8 js-id="b_pr"" >00000000000000</p>
+      </div>
+      <div class="element element-11 clearfix js--t-i-m-e">
+        <input class="_input _input-3" placeholder="8" value="8" id="error_mult" type="text">
+      </div>
+      <div class="element element-12 clearfix js--t-i-m-e">
+        <input class="_input _input-3" placeholder="50" value="50" id="error_level" type="text">
+      </div>
+      <div class="element element-13 js--t-i-m-e">
+       <p id="code_out" class="text text-8 js-id="b_pr"" >00000000000000</p>
+      </div>
+      <div class="element element-14 clearfix js--t-i-m-e">
+        <input class="_input _input-3" placeholder="200" value="200" id="polling" type="text">
       </div>
     </div>
   </div>
@@ -48,8 +62,4 @@
 </html>
 
 <input type="hidden" id="period" value="10">
-<input type="text" id="error_level" value="50">
-<input type="text" id="error_mult" value="8">
-<p id="total_err_count">0</p>
-<p id="f_err_count">0</p>
-<p id="bp_err_count">0</p>
+

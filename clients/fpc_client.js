@@ -1,4 +1,8 @@
+var port = 8080;
+var host = location.hostname;
+if(host == '') host = 'localhost';
 var socket;
+
 window.onload = function() {
     setTimeout(main,1000);
 }
@@ -70,7 +74,7 @@ function toggle(){
 
 function norm(x){
 var y = x.toString(2);
-    while(y.length<=12){
+    while(y.length<=13){
 	y+='0';
     }
     return y;
@@ -78,6 +82,7 @@ var y = x.toString(2);
 
 function f_view(x){
 var y = '';
+    if(x>=610){x-=610;y+='1';}else y+='0';
     if(x>=377){x-=377;y+='1';}else y+='0';
     if(x>=233){x-=233;y+='1';}else y+='0';
     if(x>=144){x-=144;y+='1';}else y+='0';
@@ -98,6 +103,9 @@ function f_mask_view(x, m){
 var y = '';
 var bit = 0;
 var mask = parseInt(m,2);
+    if(x>=610){x-=610;bit=1;}else bit=0;
+    if(mask&0x2000){if(bit)y+='<font color="red">0</font>';else y+='<font color="red">1</font>';}
+    else {if(bit)y+='1';else y+='0';}
     if(x>=377){x-=377;bit=1;}else bit=0;
     if(mask&0x1000){if(bit)y+='<font color="red">0</font>';else y+='<font color="red">1</font>';}
     else {if(bit)y+='1';else y+='0';}

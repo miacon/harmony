@@ -7,11 +7,9 @@ var error_mult = 8;
 var intervalID = 0;
 var f_pr = 0, bp_pr = 0;
 var total_err_count = 0, f_err_count = 0, bp_err_count = 0;
-var bone = require('bonescript');
 var fpc = require('./fpc.js');
 var FIBO_MAX = 609;
 
-var state = bone.LOW;
 fpc.initPins();
 
 setInterval(watchdog, 10000);
@@ -61,10 +59,9 @@ io.sockets.on('connection', function (socket) {
 });
 
 function toggle(){
-	if(state == bone.HIGH) state = bone.LOW; else state = bone.HIGH;
-	bone.digitalWrite('USR0', state);
+	fpc.toggleUSR0();
 	var code_in = Math.round(Math.random()*FIBO_MAX);
-	var code_out= '0000000000000';
+	var code_out= '00000000000000';
 	var r = Math.random()*100;
 	var s = '';
 	if(r<error_level){
@@ -72,17 +69,22 @@ function toggle(){
 	    r=1+Math.floor(error_mult*r/error_level);
 	    if(r&1)bp_err_count++;
 	    for(var i = 0; i<r; i++) s+='1';
-	    for(;i<13;i++){
+	    for(;i<14;i++){
 		r = Math.round(Math.random()*(s.length));
 		s = s.substr(0,r)+'0'+s.substr(r);
 	    }
 	    code_out=s;
 	}
-	fpc.fiboWrite(code_in, parseInt(code_out,2));
-	if(bone.digitalRead('P9_42'))f_err_count++;
+	var parity = fpc.fiboWrite(code_in, parseInt(code_out,2));
+	code_in+=parity*610;
+	if(fpc.getErrorState()){
+	    //if(r<error_level)
+	    f_err_count++;
+	    //else console.log('.');
+	}
 	f_pr = Math.round(10000*f_err_count/total_err_count)/100;
 	bp_pr = Math.round(10000*bp_err_count/total_err_count)/100;
-        io.sockets.json.send({'event': 'update', 'b_pr': '0.00', 'f_pr': f_pr, 'bp_pr': bp_pr, 'code_in': code_in, 'code_out': code_out, 'total_err_count': total_err_count, 'f_err_count': f_err_count, 'bp_err_count': bp_err_count});
+        io.sockets.json.send({'event': 'update', 'b_pr': '0.00', 'f_pr': f_pr.toFixed(2), 'bp_pr': bp_pr.toFixed(2), 'code_in': code_in, 'code_out': code_out, 'total_err_count': total_err_count, 'f_err_count': f_err_count, 'bp_err_count': bp_err_count});
 }
 
 function watchdog(){

@@ -18,41 +18,34 @@ body {
 .container .container {
   left: 0;
   right: 0;
-  z-index: 16;
+  z-index: 28;
   width: 970px;
   margin-right: auto;
   margin-left: auto;
 }
 
 .text {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
   text-align: center;
 }
 
 ._button {
   display: block;
   float: left;
-  width: 103.6231884057%;
+  width: 103.8834951456%;
   height: 33px;
   border-radius: 14px;
-  background-color: rgba(0,0,0,0);
   font-size: 0.533em;
-  font-weight: 400;
   line-height: 1.38;
   text-align: center;
+  letter-spacing: 1px;
   color: rgb(0, 0, 0);
 }
 
 ._container {
   left: 0;
-  z-index: 17;
+  z-index: 29;
   width: 100%;
-  background-image: url('../images/FPC_1.png');
+  background-image: url('../images/FPC_1(2).png');
   background-repeat: no-repeat;
   background-size: 970px 670px;
   background-position: center center;
@@ -73,22 +66,78 @@ body {
   background-color: rgba(0,0,0,0);
 }
 
+._text {
+  float: left;
+  width: 96.1904761904%;
+  margin-top: 2px;
+  font-size: 0.7em;
+  line-height: 1.38;
+  color: rgb(128, 128, 128);
+}
+
 .element-1 {
   position: relative;
   float: left;
-  width: 27.9381443298%;
+  width: 21.237113402%;
   height: 80px;
-  margin: 270px 0 0 52px;
+  margin: 231px 0 0 52px;
   border-radius: 16px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
+}
+
+.element-10 {
+  position: absolute;
+  top: 469px;
+  left: 301px;
+  z-index: 15;
+  width: 39.3814432989%;
+  height: 33px;
+}
+
+.element-11 {
+  position: absolute;
+  top: 605px;
+  left: 563px;
+  z-index: 13;
+  width: 10.9278350515%;
+  height: 33px;
+}
+
+.element-12 {
+  position: absolute;
+  top: 606px;
+  left: 302px;
+  z-index: 11;
+  width: 10.9278350515%;
+  height: 33px;
+}
+
+.element-13 {
+  position: absolute;
+  top: 513px;
+  left: 301px;
+  z-index: 5;
+  width: 39.3814432989%;
+  height: 33px;
+}
+
+.element-14 {
+  position: absolute;
+  top: 606px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 10.9278350515%;
+  height: 33px;
+  margin: 0 auto;
 }
 
 .element-2 {
   position: relative;
   float: left;
-  width: 27.9381443298%;
+  width: 21.237113402%;
   height: 80px;
-  margin: 270px 0 0 26px;
+  margin: 232px 0 0 84px;
   border-radius: 16px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
 }
@@ -96,118 +145,158 @@ body {
 .element-3 {
   position: relative;
   float: left;
-  width: 27.9381443298%;
+  width: 21.237113402%;
   height: 80px;
-  margin: 270px 0 0 23px;
+  margin: 229px 0 0 85px;
   border-radius: 16px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
 }
 
 .element-4 {
   position: absolute;
-  top: 482px;
-  left: 0;
-  right: 0;
-  z-index: 11;
-  width: 85.1546391752%;
+  top: 393px;
+  left: 433px;
+  z-index: 27;
+  width: 10.824742268%;
   height: 33px;
-  margin: 0 auto;
 }
 
 .element-5 {
   position: absolute;
-  top: 435px;
-  left: 0;
-  right: 0;
-  z-index: 9;
-  width: 85.1546391752%;
+  top: 329px;
+  left: 728px;
+  z-index: 25;
+  width: 10.824742268%;
   height: 33px;
-  margin: 0 auto;
 }
 
 .element-6 {
-  float: left;
-  clear: both;
-  width: 14.2268041237%;
+  position: absolute;
+  top: 330px;
+  left: 432px;
+  z-index: 23;
+  width: 10.824742268%;
   height: 33px;
-  margin: 212px 0 0 252px;
-  border-radius: 44px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
 }
 
 .element-7 {
   position: absolute;
-  top: 562px;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  width: 15.6701030927%;
+  top: 330px;
+  left: 145px;
+  z-index: 21;
+  width: 10.824742268%;
   height: 33px;
-  margin: 0 auto;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
-  text-shadow: 0 1px 0 rgb(255, 255, 255);
 }
 
 .element-8 {
   float: left;
-  width: 14.2268041237%;
+  clear: both;
+  width: 10.618556701%;
   height: 33px;
-  margin: 210px 0 0 185px;
+  margin: 82px 0 0 316px;
+  border-radius: 44px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
+}
+
+.element-9 {
+  float: left;
+  width: 10.618556701%;
+  height: 33px;
+  margin: 82px 0 0 126px;
   border-radius: 44px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) inset;
 }
 
 .text-1 {
-  width: 271px;
-  height: 78px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 227px;
+  height: 79px;
+  margin: auto;
   text-shadow: 0 1px 0 rgb(255, 255, 255);
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 2.267em;
   line-height: 1.2;
   letter-spacing: 1px;
   color: rgb(255, 255, 255);
 }
 
 .text-2 {
-  z-index: 4;
-  width: 271px;
-  height: 78px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 16;
+  width: 227px;
+  height: 79px;
+  margin: auto;
   text-shadow: 0 1px 0 rgb(255, 255, 255);
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 2.267em;
   line-height: 1.2;
   letter-spacing: 1px;
   color: rgb(255, 255, 255);
 }
 
 .text-3 {
-  z-index: 6;
-  width: 271px;
-  height: 78px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 18;
+  width: 227px;
+  height: 79px;
+  margin: auto;
   text-shadow: 0 1px 0 rgb(255, 255, 255);
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 2.267em;
   line-height: 1.2;
   letter-spacing: 1px;
   color: rgb(255, 255, 255);
 }
 
-.text-4 {
-  z-index: 10;
-  text-shadow: 0 1px 1px rgb(255, 255, 255);
+.text-8 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 14;
+  margin: auto;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.22);
   font-size: 1em;
-  letter-spacing: 2px;
-  color: rgb(128, 128, 128);
+  letter-spacing: 11px;
+  color: #144505;
 }
 
-.text-5 {
-  z-index: 8;
-  text-shadow: 0 1px 1px rgb(255, 255, 255);
+.text-9 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: auto;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.22);
   font-size: 1em;
-  letter-spacing: 2px;
-  color: rgb(128, 128, 128);
+  letter-spacing: 11px;
+  color: #144505;
 }
 
 .element ._button-1 {
-  margin-top: -2px;
+  margin-left: -1.9417475729%;
+}
+
+.element ._button-2 {
+  margin-left: 3.8834951456%;
+}
+
+.element ._input-2 {
+  margin-left: 0.9433962264%;
+}
+
+.element ._input-3 {
+  margin-left: 3.7735849056%;
 }
