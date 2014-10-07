@@ -90,7 +90,7 @@ function toggle(){
 		if(bp_err_count>=total_err_count)bp_pr = (Math.round(1000*bp_err_count/total_err_count)/10).toFixed(1);
 		else				 bp_pr = (Math.round(10000*bp_err_count/total_err_count)/100).toFixed(2);
 	}
-        io.sockets.json.send({'event': 'update', 'b_pr': '0.00', 'f_pr': f_pr, 'bp_pr': bp_pr, 'code_in': code_in, 'code_out': code_out, 'total_err_count': total_err_count, 'f_err_count': f_err_count, 'bp_err_count': bp_err_count});
+        io.sockets.json.send({'event': 'update', 'b_pr': '00.00', 'f_pr': f_pr, 'bp_pr': bp_pr, 'code_in': code_in, 'code_out': code_out, 'total_err_count': total_err_count, 'f_err_count': f_err_count, 'bp_err_count': bp_err_count});
 }
 
 function watchdog(){
