@@ -64,6 +64,8 @@ function toggle(){
 	var code_out= '00000000000000';
 	var r = Math.random()*100;
 	var s = '';
+	var parity;
+
 	if(r<error_level){
 	    total_err_count++;
 	    r=1+Math.floor(error_mult*r/error_level);
@@ -74,17 +76,21 @@ function toggle(){
 		s = s.substr(0,r)+'0'+s.substr(r);
 	    }
 	    code_out=s;
+	    parity = fpc.fiboWrite(code_in, parseInt(code_out,2));
+	    if(fpc.getErrorState())f_err_count++;
 	}
-	var parity = fpc.fiboWrite(code_in, parseInt(code_out,2));
+	else parity = fpc.fiboWrite(code_in, parseInt(code_out,2));
+
 	code_in+=parity*610;
-	if(fpc.getErrorState()){
-	    //if(r<error_level)
-	    f_err_count++;
-	    //else console.log('.');
+
+	if(total_err_count==0){ f_pr = '0.00'; bp_pr = '0.00'; }
+	else {
+		if(f_err_count>=total_err_count)f_pr =   (Math.round(1000*f_err_count/total_err_count)/10).toFixed(1);
+		else 				f_pr =   (Math.round(10000*f_err_count/total_err_count)/100).toFixed(2);
+		if(bp_err_count>=total_err_count)bp_pr = (Math.round(1000*bp_err_count/total_err_count)/10).toFixed(1);
+		else				 bp_pr = (Math.round(10000*bp_err_count/total_err_count)/100).toFixed(2);
 	}
-	f_pr = Math.round(10000*f_err_count/total_err_count)/100;
-	bp_pr = Math.round(10000*bp_err_count/total_err_count)/100;
-        io.sockets.json.send({'event': 'update', 'b_pr': '0.00', 'f_pr': f_pr.toFixed(2), 'bp_pr': bp_pr.toFixed(2), 'code_in': code_in, 'code_out': code_out, 'total_err_count': total_err_count, 'f_err_count': f_err_count, 'bp_err_count': bp_err_count});
+        io.sockets.json.send({'event': 'update', 'b_pr': '0.00', 'f_pr': f_pr, 'bp_pr': bp_pr, 'code_in': code_in, 'code_out': code_out, 'total_err_count': total_err_count, 'f_err_count': f_err_count, 'bp_err_count': bp_err_count});
 }
 
 function watchdog(){
